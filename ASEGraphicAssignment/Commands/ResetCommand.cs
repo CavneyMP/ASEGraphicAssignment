@@ -29,6 +29,7 @@ namespace ASEGraphicAssignment.Commands
         public ResetCommand(GraphicsContext GraphicContext)
         {
             _GraphicContext = GraphicContext;
+
         }
         /// <summary>
         /// This executes the command, resetting the cursor position in the graphic context to the orgin back to 0, 0 which is the far top left 

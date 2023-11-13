@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ASEGraphicAssignment.Parser;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,33 @@ namespace ASEGraphicAssignment
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+
+        private void MultiLine_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SyntaxButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GraphicPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Runbutton_Click(object sender, EventArgs e)
+        {
+            var input = Singleline.Text; 
+            var parser = new CommandParser();
+            var command = parser.ParseCommand(input); 
+            var graphics = GraphicPanel.CreateGraphics();
+
+            command.Execute(graphics); 
+        }
+
+        private void Singleline_TextChanged(object sender, EventArgs e)
         {
 
         }

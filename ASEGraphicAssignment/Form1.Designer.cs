@@ -45,6 +45,7 @@
             this.Runbutton.TabIndex = 0;
             this.Runbutton.Text = "Run";
             this.Runbutton.UseVisualStyleBackColor = true;
+            this.Runbutton.Click += new System.EventHandler(this.Runbutton_Click);
             // 
             // SyntaxButton
             // 
@@ -54,6 +55,7 @@
             this.SyntaxButton.TabIndex = 1;
             this.SyntaxButton.Text = "Syntax";
             this.SyntaxButton.UseVisualStyleBackColor = true;
+            this.SyntaxButton.Click += new System.EventHandler(this.SyntaxButton_Click);
             // 
             // MultiLine
             // 
@@ -62,6 +64,7 @@
             this.MultiLine.Name = "MultiLine";
             this.MultiLine.Size = new System.Drawing.Size(507, 326);
             this.MultiLine.TabIndex = 2;
+            this.MultiLine.TextChanged += new System.EventHandler(this.MultiLine_TextChanged);
             // 
             // contextMenuStrip1
             // 
@@ -74,6 +77,7 @@
             this.Singleline.Name = "Singleline";
             this.Singleline.Size = new System.Drawing.Size(507, 20);
             this.Singleline.TabIndex = 4;
+            this.Singleline.TextChanged += new System.EventHandler(this.Singleline_TextChanged);
             // 
             // GraphicPanel
             // 
@@ -83,6 +87,7 @@
             this.GraphicPanel.Name = "GraphicPanel";
             this.GraphicPanel.Size = new System.Drawing.Size(592, 326);
             this.GraphicPanel.TabIndex = 5;
+            this.GraphicPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.GraphicPanel_Paint);
             // 
             // Form1
             // 

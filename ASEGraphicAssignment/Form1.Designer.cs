@@ -28,45 +28,88 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            this.Runbutton = new System.Windows.Forms.Button();
+            this.SyntaxButton = new System.Windows.Forms.Button();
+            this.MultiLine = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.Singleline = new System.Windows.Forms.TextBox();
+            this.GraphicPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // button1
+            // Runbutton
             // 
-            this.button1.Location = new System.Drawing.Point(12, 383);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Runbutton.Location = new System.Drawing.Point(12, 370);
+            this.Runbutton.Name = "Runbutton";
+            this.Runbutton.Size = new System.Drawing.Size(75, 23);
+            this.Runbutton.TabIndex = 0;
+            this.Runbutton.Text = "Run";
+            this.Runbutton.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // SyntaxButton
             // 
-            this.button2.Location = new System.Drawing.Point(108, 383);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.SyntaxButton.Location = new System.Drawing.Point(93, 370);
+            this.SyntaxButton.Name = "SyntaxButton";
+            this.SyntaxButton.Size = new System.Drawing.Size(75, 23);
+            this.SyntaxButton.TabIndex = 1;
+            this.SyntaxButton.Text = "Syntax";
+            this.SyntaxButton.UseVisualStyleBackColor = true;
+            // 
+            // MultiLine
+            // 
+            this.MultiLine.Location = new System.Drawing.Point(12, 9);
+            this.MultiLine.Multiline = true;
+            this.MultiLine.Name = "MultiLine";
+            this.MultiLine.Size = new System.Drawing.Size(507, 326);
+            this.MultiLine.TabIndex = 2;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // Singleline
+            // 
+            this.Singleline.Location = new System.Drawing.Point(12, 344);
+            this.Singleline.Name = "Singleline";
+            this.Singleline.Size = new System.Drawing.Size(507, 20);
+            this.Singleline.TabIndex = 4;
+            // 
+            // GraphicPanel
+            // 
+            this.GraphicPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.GraphicPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.GraphicPanel.Location = new System.Drawing.Point(528, 12);
+            this.GraphicPanel.Name = "GraphicPanel";
+            this.GraphicPanel.Size = new System.Drawing.Size(592, 326);
+            this.GraphicPanel.TabIndex = 5;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SlateGray;
             this.ClientSize = new System.Drawing.Size(1129, 613);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.GraphicPanel);
+            this.Controls.Add(this.Singleline);
+            this.Controls.Add(this.MultiLine);
+            this.Controls.Add(this.SyntaxButton);
+            this.Controls.Add(this.Runbutton);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Runbutton;
+        private System.Windows.Forms.Button SyntaxButton;
+        private System.Windows.Forms.TextBox MultiLine;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.TextBox Singleline;
+        private System.Windows.Forms.Panel GraphicPanel;
     }
 }
 

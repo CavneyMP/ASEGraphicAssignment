@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASEGraphicAssignment", "ASEGraphicAssignment\ASEGraphicAssignment.csproj", "{BAD62CAE-0BE4-41B8-A2E8-D87E37865810}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASEGraphicAssignmentTests", "ASEGraphicAssignmentTests\ASEGraphicAssignmentTests.csproj", "{58D1A454-4066-4A9F-8976-884ADDDB311C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BAD62CAE-0BE4-41B8-A2E8-D87E37865810}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAD62CAE-0BE4-41B8-A2E8-D87E37865810}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAD62CAE-0BE4-41B8-A2E8-D87E37865810}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58D1A454-4066-4A9F-8976-884ADDDB311C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58D1A454-4066-4A9F-8976-884ADDDB311C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58D1A454-4066-4A9F-8976-884ADDDB311C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58D1A454-4066-4A9F-8976-884ADDDB311C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

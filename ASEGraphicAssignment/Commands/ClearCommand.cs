@@ -17,6 +17,10 @@ public class ClearCommand : ICommandInterface
         // Nothing required...
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="graphics"></param>
     public void Execute(Graphics graphics)
     {
         graphics.Clear(Color.FromArgb(224, 224, 224)); // Set canvas to the form background colour. 

@@ -51,6 +51,9 @@ namespace ASEGraphicAssignment.Factory
 
                 default:
                     throw new ArgumentException($"Command '{command}' is not recognized.");
+
+                case "clear":
+                    return new ClearCommand();
             }
         }
     }

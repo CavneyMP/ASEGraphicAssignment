@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\CircleCommand.cs" />
     <Compile Include="Commands\ClearCommand.cs" />
     <Compile Include="Commands\ICommandInterface.cs" />
     <Compile Include="Commands\DrawToCommand.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="Commands\ResetCommand.cs" />
     <Compile Include="Commands\SaveCommand.cs" />
     <Compile Include="Commands\SquareCommand.cs" />
+    <Compile Include="Commands\TriangleCommand.cs" />
     <Compile Include="Factory\CommandFactory.cs" />
     <Compile Include="GraphicContext\GraphicsContext.cs" />
     <Compile Include="Parser\CommandParser.cs" />

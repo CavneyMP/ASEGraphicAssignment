@@ -8,16 +8,16 @@ namespace ASEGraphicAssignment.Tests
     [TestClass()]
     public class CommandParserTests
     {
-        [TestMethod() ]
 
+        [TestMethod()]
         public void ParseSingleLineCommandWithParametersTest()
         {
             // Creating a new instance of command parser and a string input "drawto 100, 100" 
             var parser = new CommandParser();
             string input = "moveto 100 100";
+            string multiLineContent = ""; 
 
-            // 
-            var commandResult = parser.ParseCommand(input);
+            var commandResult = parser.ParseCommand(input, multiLineContent);
             string[] tokens = input.Split(' ');
 
             // Check that the tokens match what they should with the above command
@@ -39,7 +39,8 @@ namespace ASEGraphicAssignment.Tests
             string[] lines = multiLineInput.Split(new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries);
             foreach (var line in lines)
             {
-                var commandResult = parser.ParseCommand(line);
+                var commandResult = parser.ParseCommand(line, multiLineInput); 
+
                 string[] tokens = line.Split(' ');
 
                 // check there are more than two lines annd is not null

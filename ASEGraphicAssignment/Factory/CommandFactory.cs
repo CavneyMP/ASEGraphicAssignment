@@ -60,6 +60,14 @@ namespace ASEGraphicAssignment.Factory
                     }
                     throw new ArgumentException("Save command requires a file path parameter.");
 
+                case "circle":
+                    if (parameters.Length == 1 && int.TryParse(parameters[0], out int radius))
+                    {
+                        return new CircleCommand(radius, _GraphicContext);
+                    }
+                    throw new ArgumentException("Circle command requires one integer parameter: radius.");
+
+
                 case "square":
                     if (parameters.Length == 2
                         && int.TryParse(parameters[0], out int width)

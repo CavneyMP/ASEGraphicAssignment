@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ASEGraphicAssignment.GraphicContext
 {
     /// <summary>
-    ///This class gives context for the graphical operations and will maintain states like where the user is currently
+    ///This is a class that is defined to maintain the state necessary for the drawing envrioment, it is to hold drawing position, color and pen settings.
     /// </summary>
     public class GraphicsContext
     {

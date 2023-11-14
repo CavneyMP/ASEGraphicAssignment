@@ -31,6 +31,15 @@ namespace ASEGraphicAssignment.Factory
                 case "reset":
                     return new ResetCommand(_GraphicContext);
 
+                case "drawto":
+                    if (parameters.Length == 2
+                        && int.TryParse(parameters[0], out int drawX)
+                        && int.TryParse(parameters[1], out int drawY))
+                    {
+                        return new DrawToCommand(new Point(drawX, drawY), _GraphicContext);
+                    }
+                    throw new ArgumentException("DrawTo command requires two integer parameters: x and y coordinates.");
+
                 default:
                     throw new ArgumentException($"Command '{command}' is not recognized.");
             }

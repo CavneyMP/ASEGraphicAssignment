@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\ICommandInterface.cs" />
+    <Compile Include="Commands\DrawToCommand.cs" />
     <Compile Include="Commands\ResetCommand.cs" />
     <Compile Include="Factory\CommandFactory.cs" />
     <Compile Include="GraphicContext\GraphicsContext.cs" />

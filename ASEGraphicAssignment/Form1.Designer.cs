@@ -35,11 +35,13 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.Singleline = new System.Windows.Forms.TextBox();
             this.GraphicPanel = new System.Windows.Forms.Panel();
+            this.syntaxReportText = new System.Windows.Forms.Panel();
+            this.MultiLineRunBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Runbutton
             // 
-            this.Runbutton.Location = new System.Drawing.Point(12, 370);
+            this.Runbutton.Location = new System.Drawing.Point(15, 568);
             this.Runbutton.Name = "Runbutton";
             this.Runbutton.Size = new System.Drawing.Size(75, 23);
             this.Runbutton.TabIndex = 0;
@@ -49,7 +51,7 @@
             // 
             // SyntaxButton
             // 
-            this.SyntaxButton.Location = new System.Drawing.Point(93, 370);
+            this.SyntaxButton.Location = new System.Drawing.Point(96, 568);
             this.SyntaxButton.Name = "SyntaxButton";
             this.SyntaxButton.Size = new System.Drawing.Size(75, 23);
             this.SyntaxButton.TabIndex = 1;
@@ -62,7 +64,7 @@
             this.MultiLine.Location = new System.Drawing.Point(12, 9);
             this.MultiLine.Multiline = true;
             this.MultiLine.Name = "MultiLine";
-            this.MultiLine.Size = new System.Drawing.Size(507, 326);
+            this.MultiLine.Size = new System.Drawing.Size(507, 433);
             this.MultiLine.TabIndex = 2;
             this.MultiLine.TextChanged += new System.EventHandler(this.MultiLine_TextChanged);
             // 
@@ -73,7 +75,7 @@
             // 
             // Singleline
             // 
-            this.Singleline.Location = new System.Drawing.Point(12, 344);
+            this.Singleline.Location = new System.Drawing.Point(15, 542);
             this.Singleline.Name = "Singleline";
             this.Singleline.Size = new System.Drawing.Size(507, 20);
             this.Singleline.TabIndex = 4;
@@ -83,11 +85,30 @@
             // 
             this.GraphicPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.GraphicPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.GraphicPanel.Location = new System.Drawing.Point(528, 12);
+            this.GraphicPanel.Location = new System.Drawing.Point(528, 9);
             this.GraphicPanel.Name = "GraphicPanel";
-            this.GraphicPanel.Size = new System.Drawing.Size(592, 326);
+            this.GraphicPanel.Size = new System.Drawing.Size(592, 433);
             this.GraphicPanel.TabIndex = 5;
             this.GraphicPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.GraphicPanel_Paint);
+            // 
+            // syntaxReportText
+            // 
+            this.syntaxReportText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.syntaxReportText.Location = new System.Drawing.Point(528, 471);
+            this.syntaxReportText.Name = "syntaxReportText";
+            this.syntaxReportText.Size = new System.Drawing.Size(592, 128);
+            this.syntaxReportText.TabIndex = 6;
+            this.syntaxReportText.Paint += new System.Windows.Forms.PaintEventHandler(this.syntaxReportBox);
+            // 
+            // MultiLineRunBtn
+            // 
+            this.MultiLineRunBtn.Location = new System.Drawing.Point(12, 448);
+            this.MultiLineRunBtn.Name = "MultiLineRunBtn";
+            this.MultiLineRunBtn.Size = new System.Drawing.Size(75, 23);
+            this.MultiLineRunBtn.TabIndex = 0;
+            this.MultiLineRunBtn.Text = "Run";
+            this.MultiLineRunBtn.UseVisualStyleBackColor = true;
+            this.MultiLineRunBtn.Click += new System.EventHandler(this.MultiLineRunBtn_Click);
             // 
             // Form1
             // 
@@ -95,6 +116,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateGray;
             this.ClientSize = new System.Drawing.Size(1129, 613);
+            this.Controls.Add(this.MultiLineRunBtn);
+            this.Controls.Add(this.syntaxReportText);
             this.Controls.Add(this.GraphicPanel);
             this.Controls.Add(this.Singleline);
             this.Controls.Add(this.MultiLine);
@@ -102,6 +125,7 @@
             this.Controls.Add(this.Runbutton);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,6 +139,8 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TextBox Singleline;
         private System.Windows.Forms.Panel GraphicPanel;
+        private System.Windows.Forms.Panel syntaxReportText;
+        private System.Windows.Forms.Button MultiLineRunBtn;
     }
 }
 

@@ -51,6 +51,7 @@
     <Compile Include="Commands\DrawToCommand.cs" />
     <Compile Include="Commands\MoveToCommand.cs" />
     <Compile Include="Commands\ResetCommand.cs" />
+    <Compile Include="Commands\SaveCommand.cs" />
     <Compile Include="Factory\CommandFactory.cs" />
     <Compile Include="GraphicContext\GraphicsContext.cs" />
     <Compile Include="Parser\CommandParser.cs" />

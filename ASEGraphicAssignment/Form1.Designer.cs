@@ -98,7 +98,7 @@
             this.syntaxReportText.Name = "syntaxReportText";
             this.syntaxReportText.Size = new System.Drawing.Size(592, 128);
             this.syntaxReportText.TabIndex = 6;
-            this.syntaxReportText.Paint += new System.Windows.Forms.PaintEventHandler(this.syntaxReportBox);
+            this.syntaxReportText.Paint += new System.Windows.Forms.PaintEventHandler(this.SyntaxReportBox);
             // 
             // MultiLineRunBtn
             // 

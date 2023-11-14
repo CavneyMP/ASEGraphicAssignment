@@ -56,7 +56,7 @@ namespace ASEGraphicAssignment
 
         }
 
-        private void syntaxReportBox(object sender, PaintEventArgs e)
+        private void SyntaxReportBox(object sender, PaintEventArgs e)
         {
 
         }

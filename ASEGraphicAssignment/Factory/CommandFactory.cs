@@ -17,12 +17,13 @@ namespace ASEGraphicAssignment.Factory
         private static readonly GraphicsContext _GraphicContext = new GraphicsContext();
 
         /// <summary>
-        /// This method called GetCommand is what creates the object
+        /// 
         /// </summary>
-        /// <param name="command">This is where we have parsed the first word of the input to know what the actual user command is</param>
-        /// <param name="parameters">This is an array of strings that will hold the parameters the user passes</param>
-        /// <returns>This is where the method returns an object that implements the intercface and the object will be the command given by the user </returns>
-        /// <exception cref="ArgumentException">If command isnt recognised then this exception will be thrown</exception>
+        /// <param name="command"></param>
+        /// <param name="parameters"></param>
+        /// <param name="multiLineContent"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
 
         public static ICommandInterface GetCommand(string command, string[] parameters, string multiLineContent)
         {
@@ -58,6 +59,15 @@ namespace ASEGraphicAssignment.Factory
                         return new SaveCommand(parameters[0], multiLineContent);
                     }
                     throw new ArgumentException("Save command requires a file path parameter.");
+
+                case "square":
+                    if (parameters.Length == 2
+                        && int.TryParse(parameters[0], out int width)
+                        && int.TryParse(parameters[1], out int height))
+                    {
+                        return new SquareCommand(width, height, _GraphicContext);
+                    }
+                    throw new ArgumentException("Square command requires two integers to represent the width and height.");
 
                 default:
                     throw new ArgumentException($"Command '{command}' is not recognized.");

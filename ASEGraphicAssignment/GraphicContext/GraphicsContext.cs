@@ -12,11 +12,10 @@ namespace ASEGraphicAssignment.GraphicContext
     /// </summary>
     public class GraphicsContext
     {
-
-        /// <summary>
-        /// This simply gets the current position of where the user is pointing
-        /// </summary>
         public Point CurrentPosition { get; private set; }
+        public Color CurrentColor { get; private set; }
+        public Pen CurrentPen { get; private set; }
+
 
         /// <summary>
         /// This initializes the instance of the graphicsContext class
@@ -24,8 +23,13 @@ namespace ASEGraphicAssignment.GraphicContext
 
         public GraphicsContext()
         {
-            CurrentPosition = new Point(0, 0); // Instantiate with a default position
+            CurrentPosition = new Point(0, 0); // Default position
+            CurrentColor = Color.Black;        // Default color
+            CurrentPen = new Pen(CurrentColor); // Default pen
         }
+
+
+
         /// <summary>
         /// This updates the current positon
         /// </summary>
@@ -37,11 +41,23 @@ namespace ASEGraphicAssignment.GraphicContext
         }
 
         /// <summary>
+        /// This method updates the colour
+        /// </summary>
+        /// <param name="newColor"> Needs the colour the user wishes to set to i.e red</param>
+
+        public void UpdateColor(Color newColor)
+        {
+            CurrentColor = newColor;
+            CurrentPen = new Pen(CurrentColor); // Update the pen whenever the color changes
+        }
+
+        /// <summary>
         /// This resets the cursor back to 0,0 which is the far top left
         /// </summary>
         public void Reset()
         {
             CurrentPosition = new Point(0, 0); // Reset to default position
+            UpdateColor(Color.Black);          // Reset color
         }
     }
 }

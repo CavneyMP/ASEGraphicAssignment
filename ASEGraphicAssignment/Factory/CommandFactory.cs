@@ -24,7 +24,7 @@ namespace ASEGraphicAssignment.Factory
         /// <returns>This is where the method returns an object that implements the intercface and the object will be the command given by the user </returns>
         /// <exception cref="ArgumentException">If command isnt recognised then this exception will be thrown</exception>
 
-        public static Commands.ICommandInterface GetCommand(string command, string[] parameters)
+        public static ICommandInterface GetCommand(string command, string[] parameters, string multiLineContent)
         {
             switch (command.ToLower())
             {
@@ -49,11 +49,19 @@ namespace ASEGraphicAssignment.Factory
                     }
                     throw new ArgumentException("MoveTo command requires two integer parameters: x and y coordinates.");
 
-                default:
-                    throw new ArgumentException($"Command '{command}' is not recognized.");
-
                 case "clear":
                     return new ClearCommand();
+
+                case "save":
+                    if (parameters.Length == 1)
+                    {
+                        return new SaveCommand(parameters[0], multiLineContent);
+                    }
+                    throw new ArgumentException("Save command requires a file path parameter.");
+
+                default:
+                    throw new ArgumentException($"Command '{command}' is not recognized.");
+              
             }
         }
     }

@@ -20,13 +20,13 @@ namespace ASEGraphicAssignment.Parser
         /// </summary>
         /// <param name="inputLine">The input line is what will contain the command and the parameters </param>
         /// <returns>The command that corresponds with the parsed input</returns>
-        public ICommandInterface ParseCommand(string userInput)
+        public ICommandInterface ParseCommand(string userInput, string multiLineContent)
         {
             string[] tokens = userInput.Split(' '); // Split the command up where white space is found.
             string command = tokens[0]; //Takes first token as the command name 
             string[] parameters = tokens.Skip(1).ToArray(); // Split and place next tokens in an array called parameters.
 
-            return CommandFactory.GetCommand(command, parameters); // Here we create and return the command
+            return CommandFactory.GetCommand(command, parameters, multiLineContent); // Here we create and return the command
         }
     }
 }

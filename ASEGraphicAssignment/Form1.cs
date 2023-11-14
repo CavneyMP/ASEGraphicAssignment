@@ -38,8 +38,9 @@ namespace ASEGraphicAssignment
         private void Runbutton_Click(object sender, EventArgs e)
         {
             var input = Singleline.Text;
+            var multiLineContent = MultiLine.Text; // Assuming MultiLineTextBox is the name of your multi-line text box
             var parser = new CommandParser();
-            var command = parser.ParseCommand(input);
+            var command = parser.ParseCommand(input, multiLineContent);
             var graphics = GraphicPanel.CreateGraphics();
 
             command.Execute(graphics);
@@ -69,30 +70,34 @@ namespace ASEGraphicAssignment
         private void MultiLineRunBtn_Click(object sender, EventArgs e)
         {
             // Split text into lines
-            string[] lines = MultiLine.Text.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+            string multiLineTextContent = MultiLine.Text;
 
-            // Command parser instance
+            // Retrieve the graphics object
+            Graphics graphics = GraphicPanel.CreateGraphics();
+
+            // Create a new CommandParser instance
             CommandParser parser = new CommandParser();
 
-            // here we are reteiving the graphics object 
-            Graphics graphics = GraphicPanel.CreateGraphics();
+            // Split the text from MultiLine into lines
+            string[] lines = multiLineTextContent.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
 
             // Loop through each line and execute the command
             foreach (string line in lines)
             {
                 try
                 {
-                    // Parse each line
-                    ICommandInterface command = parser.ParseCommand(line);
+                    // Parse each line with the multiLineTextContent
+                    ICommandInterface command = parser.ParseCommand(line, multiLineTextContent);
 
                     // Execute the command
                     command.Execute(graphics);
                 }
                 catch (Exception TBD)
                 {
-                    // TODO
+                
                 }
             }
+
         }
     }
 }

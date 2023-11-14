@@ -57,6 +57,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Commands\DrawToCommandTests.cs" />
+    <Compile Include="Commands\MoveToCommandTests.cs" />
     <Compile Include="Commands\ResetCommandTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

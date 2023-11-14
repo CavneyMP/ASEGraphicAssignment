@@ -40,6 +40,15 @@ namespace ASEGraphicAssignment.Factory
                     }
                     throw new ArgumentException("DrawTo command requires two integer parameters: x and y coordinates.");
 
+                case "moveto":
+                    if (parameters.Length == 2
+                        && int.TryParse(parameters[0], out int moveX)
+                        && int.TryParse(parameters[1], out int moveY))
+                    {
+                        return new MoveToCommand(new Point(moveX, moveY), _GraphicContext);
+                    }
+                    throw new ArgumentException("MoveTo command requires two integer parameters: x and y coordinates.");
+
                 default:
                     throw new ArgumentException($"Command '{command}' is not recognized.");
             }

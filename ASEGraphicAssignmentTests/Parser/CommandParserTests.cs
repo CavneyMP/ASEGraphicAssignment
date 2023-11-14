@@ -8,7 +8,6 @@ namespace ASEGraphicAssignment.Tests
     [TestClass()]
     public class CommandParserTests
     {
-        // Single Line Correctly Parsed
         [TestMethod() ]
 
         public void ParseSingleLineCommandWithParametersTest()

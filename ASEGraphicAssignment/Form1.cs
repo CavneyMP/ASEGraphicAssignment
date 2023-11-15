@@ -19,21 +19,11 @@ namespace ASEGraphicAssignment
             InitializeComponent();
         }
 
-
-        private void MultiLine_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SyntaxButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GraphicPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void Runbutton_Click(object sender, EventArgs e)
         {
@@ -46,20 +36,6 @@ namespace ASEGraphicAssignment
             command.Execute(graphics);
         }
 
-        private void Singleline_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SyntaxReportBox(object sender, PaintEventArgs e)
-        {
-
-        }
 
         /// <summary>
         /// MultiLineRunBtn_Click holds the logic to retreive the text from the multiLine text box. Text and split it into a string array and seperates it by line
@@ -94,9 +70,39 @@ namespace ASEGraphicAssignment
                 }
                 catch (Exception TBD)
                 {
-                
+
                 }
             }
+
+        }
+
+
+        private void MultiLine_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SyntaxButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GraphicPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void Singleline_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SyntaxReportBox(object sender, PaintEventArgs e)
+        {
 
         }
     }

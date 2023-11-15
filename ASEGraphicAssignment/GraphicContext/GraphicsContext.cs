@@ -43,11 +43,11 @@ namespace ASEGraphicAssignment.GraphicContext
         /// <summary>
         /// This method updates the colour
         /// </summary>
-        /// <param name="newColor"> Needs the colour the user wishes to set to i.e red</param>
+        /// <param name="newColour"> Needs the colour the user wishes to set to i.e red</param>
 
-        public void UpdateColor(Color newColor)
+        public void UpdateColor(Color newColour)
         {
-            CurrentColor = newColor;
+            CurrentColor = newColour;
             CurrentPen = new Pen(CurrentColor); // Update the pen whenever the color changes
         }
 

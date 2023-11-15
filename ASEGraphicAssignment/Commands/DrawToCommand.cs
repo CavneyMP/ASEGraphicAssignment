@@ -38,7 +38,7 @@ namespace ASEGraphicAssignment.Commands
 
         public void Execute(Graphics graphics)
         {
-            graphics.DrawLine(Pens.Black, _GraphicContext.CurrentPosition, _endPosition); // Draws a line from the current position to the end position
+            graphics.DrawLine(_GraphicContext.CurrentPen, _GraphicContext.CurrentPosition, _endPosition); // Draws a line from the current position to the end position
             _GraphicContext.UpdatePosition(_endPosition); // After drawing, update the current position to the end position
         }
     }

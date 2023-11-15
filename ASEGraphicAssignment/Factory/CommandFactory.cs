@@ -27,7 +27,7 @@ namespace ASEGraphicAssignment.Factory
 
         public static ICommandInterface GetCommand(string command, string[] parameters, string multiLineContent)
         {
-            switch (command.ToLower())
+            switch (command.ToLower().Trim())
             {
                 case "reset":
                     return new ResetCommand(_GraphicContext);
@@ -77,6 +77,27 @@ namespace ASEGraphicAssignment.Factory
                     }
                     throw new ArgumentException("Square command requires two integers to represent the width and height.");
 
+                case "changecolour":
+                    if (parameters.Length == 1)
+                    {
+                        Color newColour;
+                        switch (parameters[0])
+                        {
+                            case "red":
+                                newColour = Color.Red;
+                                break;
+                            case "green":
+                                newColour = Color.Green;
+                                break;
+                            case "blue":
+                                newColour = Color.Blue;
+                                break;
+                            default:
+                                throw new ArgumentException("Only choose from red, green, or blue as a parameter.");
+                        }
+                        return new ChangePenColorCommand(newColour, _GraphicContext);
+                    }
+                    throw new ArgumentException("ChangeColor command requires one parameter for the color name.");
                 default:
                     throw new ArgumentException($"Command '{command}' is not recognized.");
               

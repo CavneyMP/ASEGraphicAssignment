@@ -20,10 +20,10 @@ namespace ASEGraphicAssignment
         }
 
         /// <summary>
-        /// 
+        /// This method holds the logic for dealing with single line user input.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">An EventArgs that contains the event data.</param>
 
         private void Runbutton_Click(object sender, EventArgs e)
         {

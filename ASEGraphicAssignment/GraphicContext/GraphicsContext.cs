@@ -48,7 +48,7 @@ namespace ASEGraphicAssignment.GraphicContext
         public void UpdateColor(Color newColour)
         {
             CurrentColor = newColour;
-            CurrentPen = new Pen(CurrentColor); // Update the pen whenever the color changes
+            CurrentPen = new Pen(CurrentColor); // Update the pen when color changes
         }
 
         /// <summary>

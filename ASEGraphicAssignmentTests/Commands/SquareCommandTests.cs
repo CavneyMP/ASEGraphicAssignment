@@ -10,8 +10,14 @@ using System.Drawing;
 
 namespace ASEGraphicAssignment.Commands.Tests
 {
+    /// <summary>
+    /// This class contains tests for the square command
+    /// </summary>
     public class SquareCommandTests
     {
+        /// <summary>
+        /// We are testing if the square command sucessfully draws a square on a bit map when called, but looking at pixel data.
+        /// </summary>
         [TestMethod]
         public void SquareCommand_DrawsSquareCorrectly()
         {

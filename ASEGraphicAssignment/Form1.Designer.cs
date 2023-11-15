@@ -35,7 +35,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.Singleline = new System.Windows.Forms.TextBox();
             this.GraphicPanel = new System.Windows.Forms.Panel();
-            this.syntaxReportText = new System.Windows.Forms.Panel();
             this.MultiLineRunBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -91,15 +90,6 @@
             this.GraphicPanel.TabIndex = 5;
             this.GraphicPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.GraphicPanel_Paint);
             // 
-            // syntaxReportText
-            // 
-            this.syntaxReportText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.syntaxReportText.Location = new System.Drawing.Point(528, 471);
-            this.syntaxReportText.Name = "syntaxReportText";
-            this.syntaxReportText.Size = new System.Drawing.Size(592, 128);
-            this.syntaxReportText.TabIndex = 6;
-            this.syntaxReportText.Paint += new System.Windows.Forms.PaintEventHandler(this.SyntaxReportBox);
-            // 
             // MultiLineRunBtn
             // 
             this.MultiLineRunBtn.Location = new System.Drawing.Point(12, 448);
@@ -117,7 +107,6 @@
             this.BackColor = System.Drawing.Color.SlateGray;
             this.ClientSize = new System.Drawing.Size(1129, 613);
             this.Controls.Add(this.MultiLineRunBtn);
-            this.Controls.Add(this.syntaxReportText);
             this.Controls.Add(this.GraphicPanel);
             this.Controls.Add(this.Singleline);
             this.Controls.Add(this.MultiLine);
@@ -139,7 +128,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TextBox Singleline;
         private System.Windows.Forms.Panel GraphicPanel;
-        private System.Windows.Forms.Panel syntaxReportText;
         private System.Windows.Forms.Button MultiLineRunBtn;
     }
 }

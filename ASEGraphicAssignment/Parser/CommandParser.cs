@@ -26,7 +26,7 @@ namespace ASEGraphicAssignment.Parser
             string command = tokens[0]; //Takes first token as the command name 
             string[] parameters = tokens.Skip(1).ToArray(); // Split and place next tokens in an array called parameters.
 
-            return CommandFactory.GetCommand(command, parameters, multiLineContent); // Here we create and return the command
+            return CommandFactory.GetCommand(command, parameters, multiLineContent); // Create and return the command
         }
     }
 }

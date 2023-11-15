@@ -98,6 +98,15 @@ namespace ASEGraphicAssignment.Factory
                         return new ChangePenColorCommand(newColour, _GraphicContext);
                     }
                     throw new ArgumentException("ChangeColor command requires one parameter for the color name.");
+
+
+                case "load":
+                    if (parameters.Length == 1)
+                    {
+                        return new LoadCommand(parameters[0]);
+                    }
+                    throw new ArgumentException("Load command requires a file path parameter.");
+
                 default:
                     throw new ArgumentException($"Command '{command}' is not recognized.");
               

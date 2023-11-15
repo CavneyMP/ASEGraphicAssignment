@@ -10,6 +10,10 @@ using System.Drawing;
 
 namespace ASEGraphicAssignment.Commands.Tests
 {
+
+    /// <summary>
+    /// Contains tests for Circle Command
+    /// </summary>
     [TestClass]
     public class CircleCommandTests
     {
@@ -20,7 +24,7 @@ namespace ASEGraphicAssignment.Commands.Tests
         /// We call the command circle to draw on the context with the radius variable passed
         /// Then creating a new bitmap
         /// 
-        /// We then can assume that the circle has drawn if the centre pixel is not coloured but the relvant top, bottom, left and right of the circle is
+        /// We then can assume that the circle has drawn if the centre pixel is not coloured but the relvant top, bottom, left and right of the circle are.
         /// </summary>
         [TestMethod]
         public void CircleCommand_DrawsCircleCorrectly()

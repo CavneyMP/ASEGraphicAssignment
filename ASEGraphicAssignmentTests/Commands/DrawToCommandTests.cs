@@ -10,9 +10,15 @@ using System.Drawing;
 
 namespace ASEGraphicAssignment.Commands.Tests
 {
+    /// <summary>
+    /// This is tests class to test the draw too method 
+    /// </summary>
     [TestClass()]
     public class DrawToCommandTests
     {
+        /// <summary>
+        /// Tests if the DrawTOCOmmand correctly updates the graphics object with a line
+        /// </summary>
         [TestMethod()]
         public void DrawToCommandTest()
         {

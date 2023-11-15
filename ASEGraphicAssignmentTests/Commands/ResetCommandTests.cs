@@ -10,9 +10,15 @@ using ASEGraphicAssignment.GraphicContext;
 
 namespace ASEGraphicAssignment.Commands.Tests
     {
+    /// <summary>
+    /// This a test class for the reset command
+    /// </summary>
         [TestClass()]
         public class ResetCommandTests
         {
+        /// <summary>
+        /// This test is looking to see if when the cursor is moved, and the graphics are reset, if the default postion is reinstanted. 
+        /// </summary>
             [TestMethod()]
             public void ResetCommandResetsPosition()
             {

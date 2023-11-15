@@ -28,7 +28,7 @@ namespace ASEGraphicAssignment
         private void Runbutton_Click(object sender, EventArgs e)
         {
             var input = Singleline.Text;
-            var multiLineContent = MultiLine.Text; // Assuming MultiLineTextBox is the name of your multi-line text box
+            var multiLineContent = MultiLine.Text;
             var parser = new CommandParser();
             var command = parser.ParseCommand(input, multiLineContent);
             var graphics = GraphicPanel.CreateGraphics();
@@ -38,11 +38,12 @@ namespace ASEGraphicAssignment
 
 
         /// <summary>
-        /// MultiLineRunBtn_Click holds the logic to retreive the text from the multiLine text box. Text and split it into a string array and seperates it by line
-        /// The command parsers is the called to parse each command and the graphics is exeucte for each line. 
+        /// MultiLineRunBtn_Click holds the logic to retrieve the text from the multiLine text box, 
+        /// split it into a string array, and separate it by line. The command parser is then called 
+        /// to parse each command and the graphics is executed for each line.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">An EventArgs that contains the event data.</param>
         private void MultiLineRunBtn_Click(object sender, EventArgs e)
         {
             // Split text into lines
@@ -60,21 +61,15 @@ namespace ASEGraphicAssignment
             // Loop through each line and execute the command
             foreach (string line in lines)
             {
-                try
-                {
-                    // Parse each line with the multiLineTextContent
-                    ICommandInterface command = parser.ParseCommand(line, multiLineTextContent);
+                // Parse each line with the multiLineTextContent
+                ICommandInterface command = parser.ParseCommand(line, multiLineTextContent);
 
-                    // Execute the command
-                    command.Execute(graphics);
-                }
-                catch (Exception TBD)
-                {
-
-                }
+                // Execute the command
+                command.Execute(graphics);
             }
-
         }
+
+
 
 
         private void MultiLine_TextChanged(object sender, EventArgs e)

@@ -10,9 +10,15 @@ using System.Drawing;
 
 namespace ASEGraphicAssignment.Commands.Tests
 {
+    /// <summary>
+    /// A test class to test the move to command for user cursor
+    /// </summary>
     [TestClass]
     public class MoveToCommandTests
     {
+        /// <summary>
+        /// Test to ensure that the current and new position are updated when method us used. 
+        /// </summary>
         [TestMethod]
         public void Execute_ShouldUpdateGraphicsContextPosition()
         {
@@ -21,7 +27,7 @@ namespace ASEGraphicAssignment.Commands.Tests
             var targetPosition = new Point(10, 10);
             var moveToCommand = new MoveToCommand(targetPosition, graphicsContext);
 
-            // Using bitmap.bitmap https://learn.microsoft.com/en-us/dotnet/api/system.drawing.bitmap?view=dotnet-plat-ext-7.0 Here we are intializing a new instance of thhe bitmap class with the area 100, 100 pixel, and we we can use this as pixel data.
+            // Using bitmap.bitmap https://learn.microsoft.com/en-us/dotnet/api/system.drawing.bitmap?iew=dotnet-plat-ext-7.0 Here we are intializing a new instance of thhe bitmap class with the area 100, 100 pixel, and we we can use this as pixel data.
             using (var dummyBitmap = new Bitmap(100, 100))
             {
                 using (var dummyGraphics = Graphics.FromImage(dummyBitmap))

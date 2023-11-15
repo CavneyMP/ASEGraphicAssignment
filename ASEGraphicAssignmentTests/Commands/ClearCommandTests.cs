@@ -8,9 +8,15 @@ using System.Threading.Tasks;
 
 namespace Tests
 {
+    /// <summary>
+    /// Contains Tests for clear Command
+    /// </summary>
     [TestClass()]
     public class ClearCommandTests
     {
+        /// <summary>
+        /// This tests is to see if the clear command changes the display pixes back to default.
+        /// </summary>
         [TestMethod()]
         public void Execute_ShouldClearCanvasWithSpecificColor()
         {

@@ -5,10 +5,15 @@ using System.Linq;
 
 namespace ASEGraphicAssignment.Tests
 {
+    /// <summary>
+    /// Test class for the command parser
+    /// </summary>
     [TestClass()]
     public class CommandParserTests
     {
-
+        /// <summary>
+        /// This is a test method that checks that the single line command has been parsed correctly by checking what it recongnises as parameters
+        /// </summary>
         [TestMethod()]
         public void ParseSingleLineCommandWithParametersTest()
         {
@@ -28,6 +33,9 @@ namespace ASEGraphicAssignment.Tests
         }
 
         // multiLine parsed correctly
+        /// <summary>
+        /// Test method to check that multi line commands get recognised by checking there are two seperate tokens when the parsing has occured as this will show that one input has been split up correctly
+        /// </summary>
         [TestMethod()]
         public void ParseMultiLineCommandsTest()
         {

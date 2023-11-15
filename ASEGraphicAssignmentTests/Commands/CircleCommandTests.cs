@@ -38,7 +38,7 @@ namespace ASEGraphicAssignment.Commands.Tests
 
             command.Execute(graphics);
 
-            // Check several points from the starting point of 100, 100 with a 50 radiito verify a circle is drawn
+            // Check several points from the starting point of 100, 100 with a 50 radiito verify a circle is drawn.
             Color expectedColor = Color.Black;
             Assert.AreEqual(expectedColor, bmp.GetPixel(100, 50)); // Top of the circle
             Assert.AreEqual(expectedColor, bmp.GetPixel(100, 150)); // Bottom of the circle

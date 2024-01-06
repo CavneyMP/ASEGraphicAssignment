@@ -1,5 +1,7 @@
 ﻿using ASEGraphicAssignment.Commands;
+using ASEGraphicAssignment.Commands.ASEGraphicAssignment.Commands;
 using ASEGraphicAssignment.Factory;
+using ASEGraphicAssignment.GraphicContext;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,24 +11,63 @@ using System.Threading.Tasks;
 namespace ASEGraphicAssignment.Parser
 {
     /// <summary>
-    /// This command parser will be pasrsing the given user input, we need to know from the input what the command and passed parameters are.
-    /// The Command parser will ultizie the Command Factory to create the relevant command object. 
+    ///  This class parses the user input to create the required command. 
+    ///  It handles variable assignmennt, and command creation using the command factory.
     /// </summary>
     public class CommandParser
     {
+        private VariableContext _variableContext; // Prviate field to store the varaible context.
+        
         /// <summary>
-        /// This is where the input will be split by looking for the white space in the user input and splitting the invidual parts into "tokens"
-        /// It essentially takes the first word as the command, and anything affter into an array called parameters
+        /// This method initlizaes the new instance of the Command Parser Class and retreives the varaible values.
         /// </summary>
-        /// <param name="inputLine">The input line is what will contain the command and the parameters </param>
-        /// <returns>The command that corresponds with the parsed input</returns>
+        /// <param name="variableContext">The context used to store and retreive variables.</param>
+
+        public CommandParser(VariableContext variableContext)
+        {
+            _variableContext = variableContext;
+        }
+
+        /// <summary>
+        /// Here the user input is parsed to create and return the required command.
+        /// It can handle the varaible assignments, and creates the commands using the command interface.
+        /// </summary>
+        /// <param name="userInput">This will be the whole input from the user, which needs to containe the command or relevant varaible assignment</param>
+        /// <param name="multiLineContent">Handles user input over muliple lines for same function as above</param>
+        /// <returns>This will pass the relevant information to the command factory to retreive the command which matchs user input </returns>
+        /// <exception cref="ArgumentException"></exception>
+
         public ICommandInterface ParseCommand(string userInput, string multiLineContent)
         {
-            string[] tokens = userInput.Split(' '); // Split the command up where white space is found.
-            string command = tokens[0]; //Takes first token as the command name 
-            string[] parameters = tokens.Skip(1).ToArray(); // Split and place next tokens in an array called parameters.
+            if (userInput.Contains("="))// As = is not used for any command, we can assume that if the user input contains an = symbol, it will be to assign a varaible
+            {
+                var parts = userInput.Split('=');
+                if (parts.Length == 2)
+                {
+                    string variableName = parts[0].Trim();
+                    if (int.TryParse(parts[1].Trim(), out int value))
+                    {
+                        _variableContext.SetVariable(variableName, value);  // Set the variable
+                        return new NoOpCommand(); // No Operation is preformed, but is required for an exection as per the command factory. 
+                    }
+                    else
+                    {
+                        throw new ArgumentException($"Invalid value for variable '{variableName}'. An integer is required.");
+                    }
+                }
 
-            return CommandFactory.GetCommand(command, parameters, multiLineContent); // Create and return the command
+                else
+                {
+                    throw new ArgumentException("Invalid variable assignment. Please use format 'variable = value' where variable is the name.");
+                }
+            }
+            // This section will parse the users input by white space and cleanse the input, while storing the first item of the aray as the command as the rest as params
+            string[] tokens = userInput.Split(' ');
+            string command = tokens[0].ToLower().Trim();
+            string[] parameters = tokens.Skip(1).ToArray();
+
+            // The command, paramerters, multiline context and varaible context are all passed to the command factory. 
+            return CommandFactory.GetCommand(command, parameters, multiLineContent, _variableContext);
         }
     }
 }
